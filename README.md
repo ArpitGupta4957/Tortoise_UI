@@ -15,11 +15,6 @@ A modern, multi-platform Flutter UI for device shopping — pixel-perfect, elega
 - 🧩 Modular, maintainable codebase (BLoC, Freezed, GoRouter, GetIt)
 - ⚡️ Blazing fast with static data and design tokens
 
-## 📱 Screenshots
-
-| Home Page | Product Details | Add to Cart |
-|-----------|----------------|-------------|
-| ![Home](assets/images/iphone_16.png) | ![Details](assets/images/iphone_16_pro.png) | ![Cart](assets/icons/Confetti.gif) |
 
 ## 🚀 Getting Started
 
