@@ -2,7 +2,7 @@
 
 A modern, multi-platform Flutter UI for device shopping — pixel-perfect, elegant, and lightning fast.
 
-![Tortoise_UI Banner](assets/tortoise_landing_page.jpg)
+![Tortoise_UI Banner](tortoise_logo.png)
 
 ## ✨ Features
 
