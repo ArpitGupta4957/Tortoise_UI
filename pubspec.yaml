@@ -1,0 +1,39 @@
+name: tortoise_ui
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
+  get_it: ^8.2.0
+  json_annotation: ^4.8.1
+  freezed_annotation: ^3.1.0
+  flutter_bloc: ^9.1.1
+  go_router: ^16.2.1
+  google_fonts: ^6.2.1
+  phosphor_flutter: ^2.1.0
+  flutter_svg: ^2.2.0
+  dotted_line: ^3.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.8.0
+  json_serializable: ^6.11.1
+  freezed: ^3.2.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
