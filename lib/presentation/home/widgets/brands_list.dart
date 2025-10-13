@@ -99,7 +99,7 @@ class _BrandTileHoverState extends State<_BrandTileHover> {
                   shape: BoxShape.circle,
                   color: const Color(0xFFF8F0EA),
                   border: Border.all(
-                    color: const Color.fromARGB(255, 37, 14, 14),
+                    color: const Color.fromARGB(255, 82, 79, 79),
                     width: 2.5,
                   ),
                   boxShadow: [

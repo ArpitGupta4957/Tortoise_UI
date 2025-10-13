@@ -17,6 +17,10 @@ void runAppWith() {
   runApp(const App());
 }
 
+final ValueNotifier<ThemeMode> themeModeNotifier = ValueNotifier(
+  ThemeMode.system,
+);
+
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -30,17 +34,22 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<ProductBloc>(create: (context) => locator<ProductBloc>()),
       ],
-      child: MaterialApp.router(
-        routerConfig: goRouter,
-        theme: appThemeData,
-        darkTheme: appDarkThemeData,
-        themeMode: ThemeMode.system,
-        title: 'Tortoise UI',
-        debugShowCheckedModeBanner: false,
-        builder: (context, child) => GestureDetector(
-          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-          child: PrecacheImages(child: child ?? const SizedBox()),
-        ),
+      child: ValueListenableBuilder<ThemeMode>(
+        valueListenable: themeModeNotifier,
+        builder: (context, mode, _) {
+          return MaterialApp.router(
+            routerConfig: goRouter,
+            theme: appThemeData,
+            darkTheme: appDarkThemeData,
+            themeMode: mode,
+            title: 'Tortoise UI',
+            debugShowCheckedModeBanner: false,
+            builder: (context, child) => GestureDetector(
+              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+              child: PrecacheImages(child: child ?? const SizedBox()),
+            ),
+          );
+        },
       ),
     );
   }

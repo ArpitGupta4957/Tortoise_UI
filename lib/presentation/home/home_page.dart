@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:tortoise_ui/application/product/product_bloc.dart';
+import 'package:tortoise_ui/app.dart' show themeModeNotifier;
 import 'package:tortoise_ui/domain/product/entities/brands.dart';
 import 'package:tortoise_ui/domain/product/entities/product.dart';
 import 'package:tortoise_ui/presentation/core/widgets/custom_app_bar.dart';
@@ -37,10 +38,42 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              child: CustomAppBar.widgetTitle(
-                widgetTitle: const InputBrand(),
-                showBackButton: false,
-                height: 80,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: CustomAppBar.widgetTitle(
+                      widgetTitle: const InputBrand(),
+                      showBackButton: false,
+                      height: 80,
+                    ),
+                  ),
+                  // Manual dark mode toggle button
+                  IconButton(
+                    icon: ValueListenableBuilder<ThemeMode>(
+                      valueListenable: themeModeNotifier,
+                      builder: (context, mode, _) {
+                        return Icon(
+                          mode == ThemeMode.dark
+                              ? Icons.dark_mode
+                              : mode == ThemeMode.light
+                              ? Icons.light_mode
+                              : Icons.brightness_4,
+                          color: BaseColors.black,
+                        );
+                      },
+                    ),
+                    tooltip: 'Toggle Dark Mode',
+                    onPressed: () {
+                      if (themeModeNotifier.value == ThemeMode.light) {
+                        themeModeNotifier.value = ThemeMode.dark;
+                      } else if (themeModeNotifier.value == ThemeMode.dark) {
+                        themeModeNotifier.value = ThemeMode.system;
+                      } else {
+                        themeModeNotifier.value = ThemeMode.light;
+                      }
+                    },
+                  ),
+                ],
               ),
             ),
             const Expanded(child: HomePageWidget()),

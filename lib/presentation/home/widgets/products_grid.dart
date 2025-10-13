@@ -178,7 +178,7 @@ class _ProductTile extends StatelessWidget {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: BaseColors.primaryGreen,
-                          foregroundColor: BaseColors.primaryBlack,
+                          foregroundColor: Colors.white,
                           elevation: 2,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -194,7 +194,10 @@ class _ProductTile extends StatelessWidget {
                         ),
                         child: const Text(
                           'Add To Cart',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
