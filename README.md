@@ -46,15 +46,6 @@ A modern, multi-platform Flutter UI for device shopping — pixel-perfect, elega
 
 ## 💡 Design Highlights
 
-- **Pixel-perfect:** Matches Figma/screenshot designs
 - **Animated:** Marquee shipping, confetti, and more
 - **Accessible:** Large touch targets, readable fonts
 - **Customizable:** Easy to theme and extend
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first.
-
-## 📄 License
-
-This project is licensed under the MIT License.
